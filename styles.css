@@ -66,8 +66,12 @@ nav {
 }
 .nav-logo-img {
   height: 42px;
+  max-height: 42px;
   width: auto;
+  max-width: 44px;
   flex-shrink: 0;
+  display: block;
+  object-fit: contain;
 }
 .nav-links {
   list-style: none;
@@ -197,6 +201,7 @@ nav {
   transform: translateX(-50%) translateY(0);
 }
 .dropdown-menu li {
+  list-style: none;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
 }
 .dropdown-menu li:last-child {
