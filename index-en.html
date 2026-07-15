@@ -926,7 +926,11 @@
           </div>
         </div>
         <div>
-          <form name="contact-en" method="POST" data-netlify="true" class="form-grid">
+          <div id="form-success-en" style="display:none; padding: 3rem 1rem; text-align:center;">
+            <p style="font-size:1.1rem; color: var(--orange); margin-bottom:0.5rem;">✓ Message sent</p>
+            <p style="color: var(--gray-light); font-size:0.95rem;">We'll be in touch with you soon.</p>
+          </div>
+          <form id="contact-form-en" name="contact-en" method="POST" data-netlify="true" class="form-grid">
             <input type="hidden" name="form-name" value="contact-en" />
             <div class="form-group">
               <label>First name</label><input type="text" name="first-name" placeholder="John" required />
@@ -1039,6 +1043,20 @@
             .querySelectorAll(".faq-item")
             .forEach((i) => i.classList.remove("open"));
           if (!isOpen) item.classList.add("open");
+        });
+      });
+    </script>
+    <script>
+      document.getElementById('contact-form-en').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = e.target;
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        }).then(() => {
+          form.style.display = 'none';
+          document.getElementById('form-success-en').style.display = 'block';
         });
       });
     </script>
