@@ -936,36 +936,38 @@
           </div>
         </div>
         <div>
-          <div class="form-grid">
+          <form name="contact-es" method="POST" data-netlify="true" class="form-grid">
+            <input type="hidden" name="form-name" value="contact-es" />
             <div class="form-group">
-              <label>Nombre</label><input type="text" placeholder="Juan" />
+              <label>Nombre</label><input type="text" name="nombre" placeholder="Juan" required />
             </div>
             <div class="form-group">
-              <label>Apellido</label><input type="text" placeholder="García" />
+              <label>Apellido</label><input type="text" name="apellido" placeholder="García" required />
             </div>
             <div class="form-group full">
               <label>Nombre de empresa (si aplica)</label
-              ><input type="text" placeholder="Acme LLC" />
+              ><input type="text" name="empresa" placeholder="Acme LLC" />
             </div>
             <div class="form-group full">
               <label>Correo electrónico</label
-              ><input type="email" placeholder="juan@correo.com" />
+              ><input type="email" name="correo" placeholder="juan@correo.com" required />
             </div>
             <div class="form-group full">
               <label>Número de teléfono</label
-              ><input type="tel" placeholder="(555) 000-0000" />
+              ><input type="tel" name="telefono" placeholder="(555) 000-0000" />
             </div>
             <div class="form-group full">
               <label>¿Cómo podemos ayudarte? (opcional)</label
               ><textarea
+                name="mensaje"
                 rows="4"
                 placeholder=""
               ></textarea>
             </div>
             <div class="form-submit">
-              <button type="button">Enviar mensaje →</button>
+              <button type="submit">Enviar mensaje →</button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>
